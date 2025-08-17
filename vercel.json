@@ -1,23 +1,39 @@
 {
-  "version": 2,
-  "name": "autowise-parts",
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/client/build/$1"
-    }
-  ]
+    "version": 2,
+    "name": "autowise-parts",
+    "builds": [
+        {
+            "src": "client/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        },
+        {
+            "src": "api/**/*.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/products",
+            "dest": "/api/products.js"
+        },
+        {
+            "src": "/api/orders",
+            "dest": "/api/orders.js"
+        },
+        {
+            "src": "/api/payments/process",
+            "dest": "/api/payments.js"
+        },
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/index.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/client/build/$1"
+        }
+    ]
 }

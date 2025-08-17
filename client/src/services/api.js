@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Use environment-based API URL
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
+const API_BASE_URL = process.env.NODE_ENV === 'production'
   ? '/api' // Use relative path in production (Vercel)
   : 'http://localhost:5000/api'; // Local development
 

@@ -13,8 +13,8 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: true,
-  credentials: true
+    origin: true,
+    credentials: true
 }));
 app.use(bodyParser.json());
 
@@ -27,7 +27,7 @@ app.use('/api/payments', paymentsRoutes);
 
 // Handle root API route
 app.get('/api', (req, res) => {
-  res.json({ message: 'Autowise Parts API is running!' });
+    res.json({ message: 'Autowise Parts API is running!' });
 });
 
 module.exports = app;
