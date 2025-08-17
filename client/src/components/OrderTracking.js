@@ -37,7 +37,7 @@ function OrderTracking() {
         <p><strong>Status:</strong> <span style={{ color: '#28a745' }}>Shipped</span></p>
         <p><strong>Total:</strong> ${order.total}</p>
       </div>
-      
+
       <h3>Order Items</h3>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {order.items && order.items.map((item, index) => (
@@ -49,7 +49,7 @@ function OrderTracking() {
           </li>
         ))}
       </ul>
-      
+
       <div style={{ marginTop: '20px', padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '5px' }}>
         <h4>Tracking Information</h4>
         <p>Your order is on its way! Expected delivery: 3-5 business days</p>

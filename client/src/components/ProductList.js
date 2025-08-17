@@ -6,15 +6,15 @@ import { Link, useLocation } from 'react-router-dom';
 function ProductList() {
   const { products, loading, error } = useSelector((state) => state);
   const location = useLocation();
-  
+
   // Get search term from URL query params
   const searchParams = new URLSearchParams(location.search);
   const searchTerm = searchParams.get('search') || '';
-  
+
   // Filter products based on search term
   const filteredProducts = useMemo(() => {
     if (!searchTerm) return products;
-    
+
     return products.filter(product =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.description.toLowerCase().includes(searchTerm.toLowerCase())

@@ -20,11 +20,11 @@ function Home() {
       <h1>Welcome to Autowise Parts</h1>
       <p>Find the best automotive parts for your vehicle.</p>
       <p>We have {products.length} products available.</p>
-      <Link to="/products" style={{ 
-        padding: '10px 20px', 
-        backgroundColor: '#007bff', 
-        color: 'white', 
-        textDecoration: 'none', 
+      <Link to="/products" style={{
+        padding: '10px 20px',
+        backgroundColor: '#007bff',
+        color: 'white',
+        textDecoration: 'none',
         borderRadius: '5px',
         display: 'inline-block',
         marginTop: '20px'

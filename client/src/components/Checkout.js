@@ -14,29 +14,29 @@ function Checkout() {
   const handleCheckout = async () => {
     setLoading(true);
     setError('');
-    
+
     try {
       // Calculate total
       const total = calculateTotal();
-      
+
       // Create order
       const orderData = {
         items: cartItems,
         total,
         date: new Date().toISOString()
       };
-      
+
       const order = await dispatch(createOrder(orderData));
-      
+
       // Process payment
       const paymentData = {
         orderId: order.id,
         amount: total,
         method: 'credit_card'
       };
-      
+
       const paymentResult = await dispatch(processPayment(paymentData));
-      
+
       if (paymentResult.success) {
         dispatch(clearCart());
         history.push(`/order/${order.id}`);
@@ -83,15 +83,15 @@ function Checkout() {
           Total: ${calculateTotal()}
         </div>
       </div>
-      <button 
-        onClick={handleCheckout} 
+      <button
+        onClick={handleCheckout}
         disabled={loading}
-        style={{ 
-          padding: '12px 30px', 
-          backgroundColor: loading ? '#ccc' : '#28a745', 
-          color: 'white', 
-          border: 'none', 
-          borderRadius: '5px', 
+        style={{
+          padding: '12px 30px',
+          backgroundColor: loading ? '#ccc' : '#28a745',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
           fontSize: '16px',
           width: '100%'
         }}

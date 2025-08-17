@@ -12,13 +12,13 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     setError('');
-    
+
     // Basic validation
     if (!username || !password) {
       setError('Please enter both username and password');
       return;
     }
-    
+
     // Simulate login with auth service
     auth.authenticate(() => {
       history.push('/');
@@ -32,18 +32,18 @@ function Login() {
       <form onSubmit={handleLogin}>
         <div style={{ marginBottom: '15px' }}>
           <label style={{ display: 'block', marginBottom: '5px' }}>Username:</label>
-          <input 
-            type="text" 
-            value={username} 
+          <input
+            type="text"
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           />
         </div>
         <div style={{ marginBottom: '15px' }}>
           <label style={{ display: 'block', marginBottom: '5px' }}>Password:</label>
-          <input 
-            type="password" 
-            value={password} 
+          <input
+            type="password"
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
           />

@@ -16,9 +16,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav style={{ 
-          padding: '10px', 
-          backgroundColor: '#f0f0f0', 
+        <nav style={{
+          padding: '10px',
+          backgroundColor: '#f0f0f0',
           borderBottom: '1px solid #ccc',
           display: 'flex',
           justifyContent: 'space-between',

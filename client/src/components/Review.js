@@ -17,7 +17,7 @@ function Review() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
+
     try {
       await dispatch(submitReview({
         productId: parseInt(productId),
@@ -44,8 +44,8 @@ function Review() {
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '15px' }}>
           <label style={{ display: 'block', marginBottom: '5px' }}>Rating:</label>
-          <select 
-            value={rating} 
+          <select
+            value={rating}
             onChange={(e) => setRating(e.target.value)}
             style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
           >
@@ -66,15 +66,15 @@ function Review() {
             style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc', boxSizing: 'border-box' }}
           />
         </div>
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           disabled={loading}
-          style={{ 
-            padding: '10px 20px', 
-            backgroundColor: loading ? '#ccc' : '#007bff', 
-            color: 'white', 
-            border: 'none', 
-            borderRadius: '5px' 
+          style={{
+            padding: '10px 20px',
+            backgroundColor: loading ? '#ccc' : '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px'
           }}
         >
           {loading ? 'Submitting...' : 'Submit Review'}
